@@ -78,9 +78,6 @@ Public and player-facing routes:
 - `/courts`
 - `/marketplace`
 - `/matchmaking`
-- `/community`
-- `/demochat`
-- `/dashboard/*`
 - `/pricing/*`
 
 Protected admin route:
@@ -95,10 +92,6 @@ Authentication is currently simulated on the client side:
 - Protected admin access checks both user role and an admin verification flag
 - The auth storage key is `tennisfinder_auth`
 
-Current admin credentials in the frontend prototype:
-
-- Email: `admin@tennisfinder.com`
-- Password: `1234567809`
 
 ## Development Setup
 
