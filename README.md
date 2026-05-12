@@ -1,39 +1,111 @@
-5.1.1 Programming Languages
-●	TypeScript was used to improve code reliability through static typing and clear data modeling for users, bookings, courts, and financial records.
-●	JavaScript (ES6+) was used through the React ecosystem to support component-based development, event handling, and asynchronous interaction.
-●	HTML and CSS formed the structural and visual foundation of the frontend, with styling largely managed through Tailwind CSS utilities.
-5.1.2 Frameworks and Libraries
-●	React.js was selected as the main frontend library because it supports modular component development, efficient UI rendering, and reusable page sections.
-●	Vite was used as the build and development tool because it provides fast startup time, efficient hot module replacement, and lightweight configuration.
-●	React Router DOM was used to manage navigation between the landing page, authentication pages, user dashboard, marketplace, courts page, matchmaking page, and admin dashboard.
-●	Tailwind CSS was used for styling because it enables rapid interface development, responsive layouts, and consistent visual spacing.
-●	Radix-based UI components were used to support accessible, reusable interface primitives such as dialogs, selects, tabs, labels, and form controls.
-●	Lucide React was used to provide lightweight and consistent icons across menus, forms, dashboards, and action areas.
-●	Sonner was used for toast notifications to provide immediate user feedback after actions such as login, signup, booking, and matchmaking requests.
-●	Recharts was used to visualize booking activity, revenue trends, payment distribution, and expense analysis in administrative and financial pages.
-5.1.3 State Management Approach
-●	React useState was used as the main state management technique because most interactions are local to individual components or pages.
-●	Browser localStorage was used to preserve authentication data and support role-based route protection.
-5.1.4 Development Tools
-●	Node.js and npm were used for dependency management and project execution.
-●	Git was used for version control and organized change tracking.
-●	Visual Studio Code is an appropriate editor for this project because it supports TypeScript, React, and frontend tooling efficiently.
+Tennis Finder Frontend
+Tennis Finder is a React + TypeScript frontend for a tennis platform that helps players discover courts, book sessions, connect with other players, browse equipment, and manage activity through user and admin dashboards.
 
+This frontend is currently built as a prototype-style single-page application with client-side routing, mock data, local authentication state, and responsive UI flows for public users, players, and administrators.
 
+Overview
+The project focuses on the main tennis user journey:
+
+Explore the public landing page and platform features
+Sign up or log in as a player
+Search and filter tennis courts
+Book available courts
+Find partners through matchmaking
+Browse tennis products in the marketplace
+Track activity from a user dashboard
+Manage operations from an admin dashboard
+Main Features
+Landing page with hero, features, app preview, pricing, testimonials, FAQ, and call-to-action sections
+Authentication flows for login and signup with client-side validation
+Court discovery with filters for city and surface type
+Booking flow with toast feedback and dashboard handoff
+Matchmaking experience for connecting players by skill and availability
+Marketplace page for browsing tennis products
+Community page and demo chat experience
+Player dashboard for bookings, orders, settings, and activity summaries
+Admin dashboard for court management, bookings, customers, and financial analytics
+Responsive layouts for desktop and mobile screens
+English and Arabic UI support in parts of the application
+Tech Stack
+React 18
+TypeScript
+Vite
+Tailwind CSS
+React Router DOM
+Radix UI primitives
+Lucide React icons
+Sonner toast notifications
+Recharts for analytics and reporting views
+Current Frontend Architecture
+The app uses a component-based structure organized around reusable UI, feature sections, pages, utilities, and mock data.
 
 src/
 ├── components/
-│   ├── admin/
-│   ├── dashboard/
-│   ├── landing-v2/
-│   └── ui/
 ├── data/
 ├── img/
 ├── lib/
 ├── pages/
-├── styles/
 ├── App.tsx
 ├── main.tsx
-└── index.css
+└── routes.tsx
+Key areas:
 
+src/components/landing-v2/: public landing page sections
+src/components/admin/: admin management UI
+src/components/dashboard/: player dashboard pages
+src/pages/: analytics and admin-facing page modules
+src/lib/: auth and preference helpers
+src/data/: mock application data
+Routes Included
+Public and player-facing routes:
 
+/
+/login
+/signup
+/courts
+/marketplace
+/matchmaking
+/community
+/demochat
+/dashboard/*
+/pricing/*
+Protected admin route:
+
+/admin/*
+Authentication Notes
+Authentication is currently simulated on the client side:
+
+User state is stored in localStorage
+Protected admin access checks both user role and an admin verification flag
+The auth storage key is tennisfinder_auth
+Current admin credentials in the frontend prototype:
+
+Email: admin@tennisfinder.com
+Password: 1234567809
+Development Setup
+Requirements
+Node.js
+npm
+Run locally
+npm install
+npm run dev
+The Vite dev server is configured to run on:
+
+http://localhost:3000
+Build for production
+npm run build
+Implementation Notes
+The current version relies heavily on mock data and simulated async behavior
+Form validation is handled through controlled inputs and conditional checks
+UI feedback is provided through toast notifications
+Most state is managed locally with React hooks such as useState
+The project is designed as a strong frontend prototype and foundation for backend integration
+Project Status
+This repository represents the frontend side of Tennis Finder. It is best described as a functional prototype that validates:
+
+Navigation flow
+User and admin experiences
+Responsive behavior
+Booking and dashboard interactions
+Financial and operational UI concepts
+The next logical step is full backend/API integration for real authentication, persistence, bookings, marketplace operations, and matchmaking services.
