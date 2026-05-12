@@ -19,30 +19,7 @@
 ●	Git was used for version control and organized change tracking.
 ●	Visual Studio Code is an appropriate editor for this project because it supports TypeScript, React, and frontend tooling efficiently.
 
-5.2 Frontend Logic and Techniques Used
-The frontend logic of the Tennis Finder project was designed to support interactive user flows while keeping the current implementation simple, maintainable, and suitable for prototype-stage validation.
-5.2.1 State Management
-The project uses a component-level state management model through React hooks such as useState. This approach is appropriate because most interactions are localized, including form inputs, search filters, modal visibility, chart display, and mobile sidebar behavior.
-5.2.2 API Integration Logic
-The current frontend relies mainly on mock data and simulated asynchronous operations instead of a fully connected production backend. Timeout-based request simulation is used in authentication and interaction flows to imitate server communication and loading behavior.
-5.2.3 Authentication Handling
-Authentication is handled on the client side using local validation logic and browser storage. After a successful login or signup process, a user object is stored in localStorage and used later by protected route logic. Admin access is restricted using both role checking and an admin verification flag.
-5.2.4 Form Validation
-Form validation is implemented through controlled components and conditional checks in submit handlers. Validation covers password confirmation, required fields, minimum password length, terms acceptance, and skill-level selection.
-5.2.5 Responsive Design Techniques
-Responsiveness is implemented through Tailwind CSS breakpoints, grid layouts, flexible containers, and adaptive spacing. Mobile navigation, stacked layouts, and responsive cards help preserve usability across different screen sizes.
-5.2.6 Performance Optimization
-The frontend applies practical performance techniques such as modular page composition, reusable components, localized state updates, and responsive chart containers. Selected derived values are computed efficiently using React hooks such as useMemo where needed.
-5.2.7 Component Reusability
-A reusable component strategy was followed throughout the project. Shared elements such as buttons, cards, badges, inputs, selects, dialogs, and image wrappers are centralized inside common component directories to improve consistency and reduce duplication.
-5.2.8 Error Handling
-Error handling is achieved through conditional validation logic and toast notifications. This ensures that users receive immediate feedback when invalid credentials are entered, required form fields are missing, or unauthorized access is attempted.
 
-5.3 System Implementation Details
-5.3.1 Project Architecture
-The frontend follows a component-based architecture organized around pages, feature-specific component groups, shared UI primitives, utility modules, and mock data sources. The entire application operates as a single-page React application with client-side routing.
-5.3.2 Folder Structure
-The frontend source code is organized into components, pages, data, styling resources, utility files, and image assets. This structure improves maintainability and separates reusable interface logic from page-level functionality.
 
 src/
 ├── components/
@@ -59,23 +36,4 @@ src/
 ├── main.tsx
 └── index.css
 
-Folder	Purpose
-components/	Reusable and feature-oriented React components
-components/admin/	Admin dashboard views: overview, court management, booking, settings
-components/dashboard/	User dashboard views: overview, bookings, matches, orders, settings
-components/landing-v2/	Public landing sections: hero, features, app preview, FAQ, pricing
-components/ui/	Shared UI primitives: buttons, inputs, cards, dialogs, badges, tables
-data/	Mock business data for bookings, customers, courts, revenue, transactions
-img/	Local image assets for landing page and app preview screens
-lib/	Helper logic including authentication utilities
-pages/	Page-level admin screens: overview, bookings, courts, customers, financials
-styles/	Project styling files and landing-page CSS resources
-5.3.3 Main Pages and Components
-●	Landing Page: presents the platform identity, features, app preview, pricing, testimonials, and call-to-action sections.
-●	Login and Signup Pages: support user authentication and onboarding with validation logic.
-●	Courts Page: supports court discovery, filtering, pricing display, and booking interaction.
-●	Matchmaking Page: presents player profiles, skill-level filtering, and match request actions.
-●	Marketplace Page: displays tennis equipment, category filters, and simulated cart and wishlist actions.
-●	User Dashboard: provides activity summaries, bookings, quick actions, and settings.
-●	Admin Dashboard: supports management of courts, bookings, customers, and financial analytics.
-<img width="468" height="648" alt="image" src="https://github.com/user-attachments/assets/35311fe9-04bc-46cd-b218-b0900f682d40" />
+
